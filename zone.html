@@ -1,0 +1,18 @@
+<html>
+    <body>
+        <h1>Hello</h1>
+        <script src="./node_modules/zone.js/dist/zone.js"></script>
+        <script src="./node_modules/zone.js/dist/long-stack-trace-zone.js"></script>
+        <script>
+          Zone.current.fork(Zone.longStackTraceZoneSpec).run(function () {
+            function asyncOp() {
+              setTimeout(function() {
+                throw new Error('Error occurred');
+              }, 1000);
+            }
+        
+            asyncOp();
+          });
+        </script>
+    </body>
+</html>
